@@ -99,3 +99,27 @@ body {
 .page:hover {
   color: red;
 }
+
+.navi {
+  display: flex;
+  justify-content: space-around;
+}
+
+.navi .navi2 {
+  display: flex;
+  margin: 1rem;
+}
+
+.navi .navi2 p {
+  position: relative;
+}
+
+.navi .navi2 .sort {
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  background-color: transparent;
+  color: transparent;
+}

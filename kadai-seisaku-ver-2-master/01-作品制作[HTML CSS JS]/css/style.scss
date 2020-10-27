@@ -94,4 +94,27 @@ body{
   color:red;
 }
 
+//----10/27変更点--------------
+.navi{
+  display: flex;
+  justify-content: space-around;
+  .navi2{
+    display: flex;
+    margin: 1rem;
+    p{
+      position: relative;
+    }
+    .sort{
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom:0;
+      position: absolute;
+      background-color: transparent;
+      color: transparent;
+    }
+  }
+}
+//----------------------------------
+
 

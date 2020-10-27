@@ -4,33 +4,50 @@ var clicknum = 1;
 var back_page = $('#back_page');
 var next_page = $('#next_page');
 let pageCount = 0;
-var sort ="";
 var a = $(".page1");
+//------------------------------
+//------------------------------
+var sort_num =$('.sort')[0];
+//------------------------------
+//------------------------------
 
+//------------------------------
+//------------------------------
 $('.sort').on('click', function(){
-  console.log("aaaaaaaaaaa");
-  sort = $('.sort').val().index(this) + 1;
-  console.log(sort);
+  var abc = $('input.sort').index(this);
+  console.log(abc);
+  sort_num = $('.sort')[abc];
+  $('.hotel_box').remove();
   getHotels();
-  // sort = $(".sort").value;
-  // console.log(sort);
 });
+//------------------------------
+//------------------------------
+
 
 function  getHotels( pageValue){
-
-  console.log(clicknum);
+  console.log(sort);
   var large_cd = 'japan',
       mid_cd = 'kagoshima',
       small_cd = 'kagoshima',
       hits = 10,
+      //------------------------------
+      //------------------------------
+      sort = sort_num.value
+      //------------------------------
+      //------------------------------
       page = 1;
-      console.log(sort);
   if( pageValue !== undefined ){
     page = pageValue;
   }
   // データを引っ張る
   $.ajax({
+    
+    //------------------------------
+    //------------------------------
     url: 'https://app.rakuten.co.jp/services/api/Travel/SimpleHotelSearch/20170426?format=json&applicationId=1020173082905393111&largeClassCode=' + large_cd + '&middleClassCode=' + mid_cd + '&smallClassCode=' + small_cd + '&page=' + page +'&hits=' + hits +'&sort='+ sort, 
+    //------------------------------
+    //------------------------------
+
     type: 'post',
     dataType:'jsonp'
   })
@@ -121,7 +138,6 @@ function aaaaa(){
     var index = $('button.page1').index(this) + 1;
     clicknum = index;
     getHotels(clicknum);
-    console.log(index);
     $('.hotel_box').remove();
     let max_page = Math.floor( pageCount / 10 + 1 );
     if(clicknum === max_page){
