@@ -4,8 +4,17 @@ var clicknum = 1;
 var back_page = $('#back_page');
 var next_page = $('#next_page');
 let pageCount = 0;
+var sort ="";
 var a = $(".page1");
 
+$('.sort').on('click', function(){
+  console.log("aaaaaaaaaaa");
+  sort = $('.sort').val().index(this) + 1;
+  console.log(sort);
+  getHotels();
+  // sort = $(".sort").value;
+  // console.log(sort);
+});
 
 function  getHotels( pageValue){
 
@@ -13,9 +22,9 @@ function  getHotels( pageValue){
   var large_cd = 'japan',
       mid_cd = 'kagoshima',
       small_cd = 'kagoshima',
-      sort='+roomCharge',
       hits = 10,
       page = 1;
+      console.log(sort);
   if( pageValue !== undefined ){
     page = pageValue;
   }
@@ -131,6 +140,7 @@ function aaaaa(){
 //   back_page.toggleClass('display_none');
 // }
 
+//並び替え
 
 
 setTimeout("aaaaa()", 2000);
