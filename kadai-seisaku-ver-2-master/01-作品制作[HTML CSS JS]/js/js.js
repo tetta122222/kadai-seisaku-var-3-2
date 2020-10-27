@@ -13,6 +13,7 @@ function  getHotels( pageValue){
   var large_cd = 'japan',
       mid_cd = 'kagoshima',
       small_cd = 'kagoshima',
+      sort='+roomCharge',
       hits = 10,
       page = 1;
   if( pageValue !== undefined ){
@@ -20,7 +21,7 @@ function  getHotels( pageValue){
   }
   // データを引っ張る
   $.ajax({
-    url: 'https://app.rakuten.co.jp/services/api/Travel/SimpleHotelSearch/20170426?format=json&applicationId=1020173082905393111&largeClassCode=' + large_cd + '&middleClassCode=' + mid_cd + '&smallClassCode=' + small_cd + '&page=' + page +'&hits=' + hits , 
+    url: 'https://app.rakuten.co.jp/services/api/Travel/SimpleHotelSearch/20170426?format=json&applicationId=1020173082905393111&largeClassCode=' + large_cd + '&middleClassCode=' + mid_cd + '&smallClassCode=' + small_cd + '&page=' + page +'&hits=' + hits +'&sort='+ sort, 
     type: 'post',
     dataType:'jsonp'
   })
